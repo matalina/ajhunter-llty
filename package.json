@@ -1,0 +1,23 @@
+{
+  "name": "ajhunter-11ty",
+  "version": "1.0.0",
+  "description": "AJ Hunter.com built with eleventy",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+    "dev:serve": "eleventy --serve",
+    "dev:tailwind": "tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/css/style.css --watch",
+    "build": "npm-run-all --parallel prod:*",
+    "prod:build": "eleventy",
+    "prod:tailwind": "tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/css/style.css --minify"
+  },
+  "author": "Alicia Wilkerson <alicia@akddev.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.16",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.18"
+  }
+}

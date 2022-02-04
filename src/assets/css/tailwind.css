@@ -1,0 +1,105 @@
+@tailwind base;
+
+html, body {
+  @apply font-body;
+}
+h1, h2, h3, h4, h5, h6, .heading {
+  @apply font-heading py-3;
+}
+h1 {
+  @apply text-7xl;
+}
+h2 {
+  @apply text-5xl;
+}
+h3 {
+  @apply text-4xl;
+}
+h4 {
+  @apply text-3xl;
+}
+h5 {
+  @apply text-2xl;
+}
+h6 {
+  @apply text-xl;
+}
+
+input, textarea {
+  @apply border mb-2 py-1 px-3 rounded border-orange-800 text-orange-800;
+}
+textarea {
+  @apply h-40;
+}
+button, button[type='submit'] {
+  @apply bg-orange-500 text-orange-50 py-1 px-3 rounded border border-orange-800 mb-2;
+}
+button:focus, button:hover, button:active {
+  @apply bg-orange-400;
+}
+/* Alert type messages */
+.message {
+  @apply rounded border py-1 px-3 mt-1;
+}
+
+.success.message {
+  @apply border-green-800 text-green-800 bg-green-200;
+}
+
+.error.message {
+  @apply border-red-800 text-red-800 bg-red-200;
+}
+
+.info.message {
+  @apply border-orange-800 text-orange-800 bg-orange-200;
+}
+.warning.message {
+  @apply border-amber-800 text-amber-800 bg-amber-200;
+}
+/* Heros */
+.hero {
+  @apply h-screen w-full;
+}
+/* Responsive Images */
+img {
+  @apply max-w-full;
+}
+
+/* footer */
+footer h3 {
+  @apply pb-3 text-orange-500;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+.hidden {
+  position: absolute;
+  left: -99999px;
+}
+a {
+  @apply block p-2 border-b border-dashed border-orange-300 text-orange-500 ;
+}
+a:hover, a:focus, a:active {
+  @apply text-orange-800 bg-orange-200;
+}
+small {
+  @apply text-sm text-gray-800;
+}
+.unsplash-credit a{
+  @apply inline p-0 border-0;
+}
+
+.hero a, .footer a, .referralBadge {
+  @apply text-orange-300 border-0;
+}
+header a, .referralBadge a {
+  @apply text-black border-0;
+}
+.footer a:hover, .footer a:focus, .footer a:active, 
+.hero a:hover, .hero a:focus, .hero a:active,
+header a:hover, header a:focus, header a:active,
+{
+  @apply text-orange-500 bg-transparent;
+}
