@@ -99,7 +99,10 @@ header a, .referralBadge a {
 }
 .footer a:hover, .footer a:focus, .footer a:active, 
 .hero a:hover, .hero a:focus, .hero a:active,
-header a:hover, header a:focus, header a:active,
-{
+header a:hover, header a:focus, header a:active {
   @apply text-orange-500 bg-transparent;
+}
+
+#blog a:hover {
+  @apply bg-transparent;
 }
