@@ -28,9 +28,7 @@ const handler: Handler = async (event, context) => {
       type: 'unconfirmed',
     })
   } as any;
-  console.log(options);
   const response = await fetch('https://api.mailerlite.com/api/v2/subscribers', options)
-  console.log(response);
   if (response.status === 200) {
     const json = { success: true, message: 'awaiting confirmation' };
     return {
@@ -40,7 +38,7 @@ const handler: Handler = async (event, context) => {
   }
   return {
     statusCode: 500,
-    body: JSON.stringify({ message: 'something went wrong.' }),
+    body: JSON.stringify({ message: 'something went wrong' }),
   }
 };
 

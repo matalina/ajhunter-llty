@@ -1,6 +1,8 @@
 <script lang="ts">
 import Blog from "./Blog.svelte";
+import Contact from "./Contact.svelte";
 import Newsletter from "./Newsletter.svelte";
+import Social from "./Social.svelte";
 
   let year = new Date().getFullYear();
 </script>
@@ -20,16 +22,7 @@ import Newsletter from "./Newsletter.svelte";
   </a>
   <!-- social media icons -->
   <div class="text-3xl p-3">
-    <div class="flex justify-center w-100">
-      <a href="https://patreon.com/ajhunter"><i class="fab fa-patreon fa-fw"></i></a>
-      <a href="https://www.facebook.com/ajs.voices"><i class="fab fa-facebook fa-fw"></i></a>
-      <a href="https://twitter.com/ajs_voices"><i class="fab fa-twitter fa-fw"></i></a>
-      <a href="https://themindofnox.com"><i class="fab fa-wordpress-simple fa-fw"></i></a>
-      <a href="https://nanowrimo.org/participants/aj-hunter" class="inline-block"><img src="./images/nanowrimo_logo.svg" alt="" class="h-8"/></a>
-      <a href="https://archiveofourown.org/users/AJHunter" class="inline-block"><img src="./images/ao3_logo.svg" alt="" class="h-7
-        "/></a>
-      <!--a href="">Dabble</a-->
-    </div>
+    <Social location={'header'} />
   </div>
 </header>
 <main>
@@ -64,29 +57,31 @@ import Newsletter from "./Newsletter.svelte";
 
 </main>
 <footer class="p-5">
-  <div class="text-center">
-    <h3>AJ Hunter</h3>
-    <p>Developer by day, Parent by night, Writer in between</p>
-    <div class="text-center p-5 text-3xl">
-      <div class="footer flex justify-center w-100">
-        <a href="https://patreon.com/ajhunter"><i class="fab fa-patreon fa-fw"></i></a>
-        <a href="https://www.facebook.com/ajs.voices"><i class="fab fa-facebook fa-fw"></i></a>
-        <a href="https://twitter.com/ajs_voices"><i class="fab fa-twitter fa-fw"></i></a>
-        <a href="https://themindofnox.com"><i class="fab fa-wordpress-simple fa-fw"></i></a>
-        <a href="https://nanowrimo.org/participants/aj-hunter" class="inline-block"><img src="./images/nanowrimo_logo.svg" alt="" class="h-8"/></a>
-        <a href="https://archiveofourown.org/users/AJHunter" class="inline-block"><img src="./images/ao3_logo.svg" alt="" class="h-7
-          "/></a>
-        <!--a href="">Dabble</a-->
+  <div class="footer">
+    <div id="about" class="text-center md:w-2/3">
+      <h3>AJ Hunter</h3>
+      <p class="text-gray-500">Developer by day, Parent by night, Writer in between</p>
+      <div class="text-center p-5 text-3xl">
+        <Social location={'footer'} />
       </div>
     </div>
-    <p class="text-xs text-center">Copyright &copy; 2011-{year} All Rights Reserved</p>
+    <div class="md:w-1/3">
+      <Contact />
+    </div>
   </div>
+
+  <p class="text-xs text-center mt-5">Copyright &copy; 2011-{year} All Rights Reserved</p>
 </footer>
 
 <style lang="postcss">
-/* footer */
-footer h3 {
-  @apply pb-3 text-orange-500;
+footer {
+  @apply bg-gray-50 text-gray-400;
+}
+.footer {
+  @apply flex;
+}
+footer :global(h3) {
+  @apply pb-3 text-gray-900;
 }
 small {
   @apply text-sm text-gray-800;
