@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/hmr.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659440079498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659440079498,
+            "name": "Commit-0",
+            "content": "// Customized HMR-safe stores\n// Based off https://github.com/svitejs/svite/blob/ddec6b9/packages/playground/hmr/src/stores/hmr-stores.js\nimport type { Writable } from 'svelte/store';\n//import { count } from './lib/stores';\n\nlet stores: Record<string, Writable<any>> = {};\n\nexport function registerStore<T>(id: string, store: Writable<T>) {\n  stores[id] = store;\n}\n\n//registerStore('count', count);\n\n// preserve the store across HMR updates\nif (import.meta.hot) {\n  if (import.meta.hot.data.stores) {\n    stores = import.meta.hot.data.stores\n  }\n  import.meta.hot.accept()\n  import.meta.hot.dispose(() => {\n    import.meta.hot.data.stores = stores\n  })\n}"
+        }
+    ]
+}
