@@ -1,5 +1,7 @@
 /node_modules/
-/_site/
-
+/dist/
+/.vscode/
+.DS_Store
+/old
 # Local Netlify folder
 .netlify

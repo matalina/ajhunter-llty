@@ -1,4 +1,9 @@
-[build]
-  publish = "_site"
-  command = "npm run build"
-  functions = "functions"
+base = '/'
+publish = 'dist/'
+command = 'npm run build'
+
+
+[dev]
+framework = 'vite'
+targetPort = 5173
+command = 'npm run dev'

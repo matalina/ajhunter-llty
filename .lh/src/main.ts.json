@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1659437579452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1659437579452,
+            "name": "Commit-0",
+            "content": "import './hmr';\nimport './main.css';\nimport App from './App.svelte';\n\nconst app = new App({\n  target: document.body\n})\n\nexport default app\n"
+        }
+    ]
+}
