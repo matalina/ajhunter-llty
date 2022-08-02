@@ -12,3 +12,24 @@ a {
 a:hover, a:focus, a:active {
   @apply text-orange-800 bg-orange-200;
 }
+
+h1, h2, h3{
+  @apply font-heading py-3;
+}
+h1 {
+  @apply text-7xl;
+}
+h2 {
+  @apply text-5xl;
+}
+h3 {
+  @apply text-4xl;
+}
+/* Heros */
+.hero {
+  @apply h-screen w-full;
+}
+/* Responsive Images */
+img {
+  @apply max-w-full;
+}

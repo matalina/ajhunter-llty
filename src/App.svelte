@@ -1,5 +1,6 @@
 <script lang="ts">
 import Blog from "./Blog.svelte";
+import Newsletter from "./Newsletter.svelte";
 
   let year = new Date().getFullYear();
 </script>
@@ -33,11 +34,10 @@ import Blog from "./Blog.svelte";
 </header>
 <main>
   <Blog />
-
-  <div class="p-5" id="newsletter">
-    <div class="engage-hub-form-embed" id="eh_form_4632927015534592" data-id="4632927015534592"></div>
+  <div class="bg-orange-200 p-10">
+    <Newsletter />
   </div>
-
+  
   <!-- Published Materials -->
   <div class="p-5">
     <h1>Published Material</h1>
@@ -84,27 +84,6 @@ import Blog from "./Blog.svelte";
 </footer>
 
 <style lang="postcss">
-  h1, h2, h3{
-  @apply font-heading py-3;
-}
-h1 {
-  @apply text-7xl;
-}
-h2 {
-  @apply text-5xl;
-}
-h3 {
-  @apply text-4xl;
-}
-/* Heros */
-.hero {
-  @apply h-screen w-full;
-}
-/* Responsive Images */
-img {
-  @apply max-w-full;
-}
-
 /* footer */
 footer h3 {
   @apply pb-3 text-orange-500;

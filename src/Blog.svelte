@@ -65,6 +65,9 @@ onMount(async () => {
   @apply w-full;
 }
 .post h3 {
-  @apply my-3 text-lg;
+  @apply my-3 text-3xl;
+}
+#logo a:hover {
+  @apply bg-transparent;
 }
 </style>
