@@ -1,4 +1,6 @@
 <script lang="ts">
+import Blog from "./Blog.svelte";
+
   let year = new Date().getFullYear();
 </script>
 
@@ -30,11 +32,7 @@
   </div>
 </header>
 <main>
-  <div class="p-5" id="blog">
-    <a href="https://themindofnox.com" class="border-0">
-      <img src="./images/nox-logo.png" alt="The Mind of Nox"/>
-    </a>
-  </div>
+  <Blog />
 
   <div class="p-5" id="newsletter">
     <div class="engage-hub-form-embed" id="eh_form_4632927015534592" data-id="4632927015534592"></div>
@@ -111,12 +109,6 @@ img {
 footer h3 {
   @apply pb-3 text-orange-500;
 }
-a {
-  @apply block p-2 border-b border-dashed border-orange-300 text-orange-500 ;
-}
-a:hover, a:focus, a:active {
-  @apply text-orange-800 bg-orange-200;
-}
 small {
   @apply text-sm text-gray-800;
 }
@@ -134,9 +126,5 @@ header a {
 .hero a:hover, .hero a:focus, .hero a:active,
 header a:hover, header a:focus, header a:active {
   @apply text-orange-500 bg-transparent;
-}
-
-#blog a:hover {
-  @apply bg-transparent;
 }
 </style>

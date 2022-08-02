@@ -5,3 +5,10 @@
 html, body {
   @apply font-body;
 }
+
+a {
+  @apply block p-2 border-b border-dashed border-orange-300 text-orange-500 ;
+}
+a:hover, a:focus, a:active {
+  @apply text-orange-800 bg-orange-200;
+}
