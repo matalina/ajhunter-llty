@@ -43,7 +43,7 @@ import Social from "./Social.svelte";
     
         </div>
       </div>
-      <div class="md:w-1/2 ml-5">
+      <div class="md:w-1/2 md:ml-5">
         <h2>Kindle Vella</h2>
         <a href="https://www.amazon.com/kindle-vella/story/B0B2J8NC15">The Call of the Dragon</a>
         <h2>Contest Entries</h2>

@@ -49,7 +49,7 @@ function clearMessages() {
 
 <style lang="postcss">
 #newsletter {
-  @apply mx-auto w-1/3;
+  @apply mx-auto md:w-1/3;
 }
 form {
   @apply w-full flex;
