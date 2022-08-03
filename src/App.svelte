@@ -58,15 +58,15 @@ import Social from "./Social.svelte";
 </main>
 <footer class="p-5">
   <div class="footer">
-    <div id="about" class="text-center md:w-2/3">
+    <div class="md:w-1/3 md:order-2">
+      <Contact />
+    </div>
+    <div id="about" class="text-center md:w-2/3 md:order-1">
       <h3>AJ Hunter</h3>
       <p class="text-gray-500">Developer by day, Parent by night, Writer in between</p>
       <div class="text-center p-5 text-3xl">
         <Social location={'footer'} />
       </div>
-    </div>
-    <div class="md:w-1/3">
-      <Contact />
     </div>
   </div>
 
