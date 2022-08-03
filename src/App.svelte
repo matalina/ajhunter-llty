@@ -78,7 +78,7 @@ footer {
   @apply bg-gray-50 text-gray-400;
 }
 .footer {
-  @apply flex;
+  @apply md:flex;
 }
 footer :global(h3) {
   @apply pb-3 text-gray-900;
