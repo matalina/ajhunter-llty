@@ -2,14 +2,13 @@ base = '/'
 publish = 'dist/'
 command = 'npm run build'
 
-
 [dev]
-framework = 'vite'
-targetPort = 5173
-command = 'npm run dev'
+  framework = 'vite'
+  targetPort = 5173
+  command = 'npm run dev'
 
 [functions."word"]
-schedule = "40 14 * * *"
+  schedule = "45 14 * * *"
 
 [functions."picture"]
-schedule = "40 14 * * *"
+  schedule = "45 14 * * *"
