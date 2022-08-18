@@ -25,13 +25,13 @@ const handler: Handler = async (event, context) => {
   wpAuth.code(code);
 
   let token = 'empty';
-  const out = await wpAuth.requestAccessToken((err, data) => {
+  const out = wpAuth.requestAccessToken((err, data) => {
     token = data;
   });
 
   return {
     statusCode: 200,
-    body: `<html><script>console.log(${token}, ${out});</script><body>${token}</body></html>`
+    body: `<html><script>console.log('${token}', '${out}');</script><body>${token}</body></html>`
   };
   
 };
