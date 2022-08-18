@@ -7,3 +7,9 @@ command = 'npm run build'
 framework = 'vite'
 targetPort = 5173
 command = 'npm run dev'
+
+[functions.word]
+schedule = "0 5 * * *"
+
+[functions.picture]
+schedule = "0 5 * * *"
