@@ -25,7 +25,7 @@ const handler: Handler = async (event, context) => {
   wpAuth.code(code);
 
   const out = wpAuth.requestAccessToken((err, data) => {
-    console.log(data);
+    console.log(data, err);
   });
 
   return {
