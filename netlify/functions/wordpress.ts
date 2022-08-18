@@ -4,15 +4,11 @@ const WPOAuth = require('wpcom-oauth');
 const KEY = process.env.WORDPRESS_SECRET
 
 const handler: Handler = async (event, context) => { 
-  if (event.rawUrl !== 'http://localhost:8888/.netlify/functions/wordpress') return {
-    statusCode: 403
-  }
-
   const wpAuth = WPOAuth({
     'client_id': '80300',
     'client_secret': KEY,
     'url': {
-      'redirect': 'http://localhost:8888/.netlify/functions/wordpress'
+      'redirect': 'https://aj-hunter.com/.netlify/functions/wordpress'
     },
     'site': 'https://thedailyspur.wordpress.com'
   });
@@ -29,8 +25,12 @@ const handler: Handler = async (event, context) => {
   wpAuth.code(code);
 
   wpAuth.requestAccessToken((err, data) => {
-    console.log(data);
+    return {
+      statusCode: 200,
+      body: `<html><script>console.log('${data}');</script></html>`
+    };
   });
+  
   return {
     statusCode: 200,
     body: 'Check console',
