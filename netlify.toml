@@ -9,7 +9,7 @@ targetPort = 5173
 command = 'npm run dev'
 
 [functions."word"]
-schedule = "35 14 * * *"
+schedule = "40 14 * * *"
 
 [functions."picture"]
-schedule = "35 14 * * *"
+schedule = "40 14 * * *"
