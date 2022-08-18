@@ -28,9 +28,11 @@ export async function createPost(site: string, post: Post) {
   const url = `https://public-api.wordpress.com/rest/v1.1/sites/${site}/posts/new`;
   const body = JSON.stringify(post);
 
-  await fetch(url, {
+  const response = await fetch(url, {
     method: 'post',
     headers,
     body,
   });
+
+  console.log(await response.json())
 }
