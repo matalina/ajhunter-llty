@@ -13,11 +13,16 @@ const headers = {
 
 async function getRandomPicture() {
   const url = `https://api.unsplash.com/photos/random`
-  const response = await fetch(url, {
-    method: 'get',
-    headers,
-  });
-  return await response.json();
+  try {
+    const response = await fetch(url, {
+      method: 'get',
+      headers,
+    });
+    return await response.json();
+  }
+  catch (e) {
+    console.log(e);
+  }
 }
 
 
