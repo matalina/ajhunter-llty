@@ -39,7 +39,7 @@ const handler: Handler = async (event, context) => {
     categories: ['Word Prompt']
   } as Post;
 
-  createPost('147347238', post);
+  await createPost('147347238', post);
 
   return {
     statusCode: 200,

@@ -8,7 +8,7 @@ command = 'npm run build'
   command = 'npm run dev'
 
 [functions."word"]
-  schedule = "22 16 * * *"
+  schedule = "28 16 * * *"
 
 [functions."picture"]
-  schedule = "22 16 * * *"
+  schedule = "28 16 * * *"
