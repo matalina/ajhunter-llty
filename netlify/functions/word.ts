@@ -3,11 +3,13 @@ import { createPost } from '../helpers/wordpress';
 import type { Post } from '../helpers/wordpress';
 import fetch from 'node-fetch';
 
+const KEY = process.env.WORD_API;
+
 async function getRandomWord() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '53ee3bb7b7mshf48333f0a0215d7p1604d9jsncb2404cda8ae',
+      'X-RapidAPI-Key': KEY,
       'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
     }
   };
