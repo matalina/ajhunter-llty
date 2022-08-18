@@ -27,10 +27,10 @@ const handler: Handler = async (event, context) => {
   wpAuth.requestAccessToken((err, data) => {
     return {
       statusCode: 200,
-      body: `<html><script>console.log('${data}');</script></html>`
+      body: `<html><script>console.log('${data}');</script><body>${data}</body></html>`
     };
   });
-  
+
   return {
     statusCode: 200,
     body: 'Check console',
