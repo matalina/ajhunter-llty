@@ -19,7 +19,6 @@ async function getRandomPicture() {
       headers,
     });
     const data = await response.json();
-    console.log(data.urls);
     return data;
   }
   catch (e) {

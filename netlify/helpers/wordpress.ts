@@ -34,7 +34,6 @@ export async function createPost(site: string, post: Post) {
       headers,
       body,
     });
-    console.log(response.status);
   }
   catch (e) {
     console.log(e);
