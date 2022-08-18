@@ -12,14 +12,16 @@ async function getRandomWord() {
       'X-RapidAPI-Key': KEY,
       'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
     }
-  };
+  } as any;
   const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   const parts = ['verb', 'noun', 'adjective', 'adverb'];
   const letter = alpha[Math.floor(Math.random() * alpha.length) + 1];
   const part = parts[Math.floor(Math.random() * parts.length) + 1];
   try {
     const response = await fetch(`https://wordsapiv1.p.rapidapi.com/words/?random=true&letterPattern=%5E${letter}.*&partofspeech=${part}&lettersmin=3&lettersMax=15&syllablesMax=6&limit=1&page=1`, options)
-    return await response.json();
+    const data = await response.json() as any;
+    console.log(data.word);
+    return data;
   }
   catch (e) {
     console.log(e);
