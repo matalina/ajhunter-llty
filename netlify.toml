@@ -8,8 +8,8 @@ framework = 'vite'
 targetPort = 5173
 command = 'npm run dev'
 
-[functions.word]
-schedule = "10 14 * * *"
+[functions."word"]
+schedule = "35 14 * * *"
 
-[functions.picture]
-schedule = "10 14 * * *"
+[functions."picture"]
+schedule = "35 14 * * *"
