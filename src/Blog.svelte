@@ -26,10 +26,10 @@ onMount(async () => {
     {@html post.excerpt}
     <div class="meta">
       {#each Object.keys(post.categories) as cat}
-        <div class="category">{post.categories[cat].name}</div>
+        <div class="category">{@html post.categories[cat].name}</div>
       {/each}
       {#each Object.keys(post.tags) as tag}
-        <div class="tag">{post.tags[tag].name}</div>
+        <div class="tag">{@html post.tags[tag].name}</div>
       {/each}
     </div>
   </div>
