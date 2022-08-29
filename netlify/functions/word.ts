@@ -18,7 +18,7 @@ async function getRandomWord() {
   const letter = alpha[Math.floor(Math.random() * alpha.length) + 1];
   const part = parts[Math.floor(Math.random() * parts.length) + 1];
   try {
-    const response = await fetch(`https://wordsapiv1.p.rapidapi.com/words/?random=true&letterPattern=%5E${letter}.*&partofspeech=${part}&lettersmin=3&lettersMax=15&syllablesMax=6&limit=1&page=1`, options)
+    const response = await fetch(`https://wordsapiv1.p.rapidapi.com/words/?random=true&letterPattern=%5E${letter}.*&partofspeech=${part}&lettersmin=3&lettersMax=10&syllablesMax=5&limit=1&page=1`, options)
     const data = await response.json() as any;
     if (!data.word) {
       return getRandomWord();
