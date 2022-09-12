@@ -1,8 +1,14 @@
 import fetch from 'node-fetch';
+import { words } from './words';
 
 const WORD = process.env.WORD_API;
 
 export async function getRandomWord() {
+  const index = Math.floor((Math.random() * words.length) + 1);
+  return { word: words[index] };
+}
+
+export async function getRandomWord_api() {
   const options = {
     method: 'GET',
     headers: {
