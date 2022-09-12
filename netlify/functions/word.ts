@@ -1,5 +1,5 @@
 import { Handler } from '@netlify/functions';
-import type { Post } from '../helpers/wordpress';
+import { createPost, Post } from '../helpers/wordpress';
 import { getRandomWord } from '../helpers/random';
 
 const handler: Handler = async (event, context) => {
@@ -13,7 +13,7 @@ const handler: Handler = async (event, context) => {
     categories: ['Word Prompt']
   } as Post;
 
-  //await createPost('147347238', post);
+  await createPost('147347238', post);
 
   return {
     statusCode: 200,
