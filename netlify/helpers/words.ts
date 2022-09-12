@@ -1,3 +1,5 @@
+/* words generated from: https://randomwordgenerator.com/ */
+
 export const words = [
   'memorandum',
   'sentiment',
