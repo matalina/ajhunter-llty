@@ -1,7 +1,17 @@
 import fetch from 'node-fetch';
 import { words } from './words';
+import { randomPromptByMonth } from './prompts';
 
 const WORD = process.env.WORD_API;
+
+const MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+
+export function getRandomPrompt() {
+  const month = (new Date()).getMonth();
+  const date = (new Date()).getDate();
+
+  return randomPromptByMonth[month][date - 1];
+}
 
 export async function getRandomWord() {
   const index = Math.floor((Math.random() * words.length) + 1);

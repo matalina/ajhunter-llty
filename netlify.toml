@@ -12,3 +12,6 @@ command = 'npm run build'
 
 [functions."picture"]
   schedule = "0 5 * * *"
+
+[functions."exercise"]
+  schedule = "0 5 * * *"
