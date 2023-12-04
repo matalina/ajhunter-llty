@@ -1,23 +1,23 @@
 import { Handler } from "@netlify/functions";
-import { getRandomWord } from "../helpers/random";
+import { getRandomPrompt, getRandomWord } from "../helpers/random";
 import { createPost, Post } from "../helpers/wordpress";
 
 const handler: Handler = async (event, context) => {
-  const word = await getRandomWord() as any;
+  const prompt = await getRandomPrompt() as any;
   const post = {
-    title: word.word,
-    content: `<p>Today's word is ${word.word}. Get the definition from <a href="http://www.dictionary.com/browse/${word.word}">dictionary.com</a> or from the <a href="https://www.urbandictionary.com/define.php?term=${word.word}">urban dictionary</a>.</p><p><em>If you use a WordPress, pingbacks should automatically track back to this page if you put in a link. If you use another blogging system, post your link in the comments so others can follow your work. Spam will be deleted.</em></p>`,
+    title: `Writing Exercise (${(new Date()).toDateString()})`,
+    content: `<p>Today's writing exercise is: "${prompt.prompt}".</p>${(prompt?.example) ? "<p>" + prompt.example + "</p>": ''}<p><em>If you use a WordPress, pingbacks should automatically track back to this page if you put in a link. If you use another blogging system, post your link in the comments so others can follow your work. Spam will be deleted.</em></p>`,
     date: (new Date()).toISOString(),
     status: 'publish',
-    tags: ['Daily Prompt', 'postaday', 'Word of the Day', 'Write Every Day', 'Daily Post'],
-    categories: ['Word Prompt']
+    tags: ['Daily Prompt', 'postaday', 'Exercise of the Day', 'Write Every Day', 'Daily Post'],
+    categories: ['Writing Exercise']
   } as Post;
 
   //await createPost('147347238', post);
-  
+
   return {
     statusCode: 200,
-    body: JSON.stringify(word),
+    body: JSON.stringify(post),
   };
 };
 
