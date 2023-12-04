@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { words } from './words';
-import { randomPromptByMonth } from './prompts';
+import { prompts, randomPromptByMonth } from './prompts';
 
 const WORD = process.env.WORD_API;
 
@@ -10,7 +10,7 @@ export function getRandomPrompt() {
   const month = (new Date()).getMonth();
   const date = (new Date()).getDate();
 
-  return randomPromptByMonth[month][date - 1];
+  return prompts[randomPromptByMonth[MONTHS[month - 1]][date - 1]];
 }
 
 export async function getRandomWord() {
